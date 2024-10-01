@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <style>
+    @font-face {
+  font-family: GravityFont;
+  src: url(./Assets/Fonts/MonumentExtended-Regular.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: GravityFont;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100vh;
+  gap: 2vw;
+  justify-content: start;
+  background-color: #000;
+}
+
+.text-loader {
+  font-size: 2rem;
+  opacity: 0;
+}
+
+.text-23 {
+  margin-left: 10vw;
+}
+
+.text-63 {
+  margin-left: 15vw;
+}
+
+.text-97 {
+  margin-left: 12vw;
+}
+.text-10 {
+  margin-left: 2vw;
+}
+
+/* -------Loading-part-end */
+
+/* ---- nav part -start--- */
+.fixed-p {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  /* background-color: orange; */
+}
+
+.flex-p-content {
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+.cntr-p,
+.cntr-p2 {
+  text-align: center;
+  z-index: 999;
+  font-size: 1.2rem;
+}
+
+.nav {
+  margin-top: 3vh;
+  gap: 2vw;
+}
+
+.nav a {
+  text-decoration: underline;
+  z-index: 999;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  font-size: 3rem;
+}
+
+.heading-text {
+  font-size: 14rem;
+}
+
+#one-text {
+  position: absolute;
+  top: 120%;
+}
+
+.section-img {
+  position: relative;
+  margin-left: 35%;
+  width: 30%;
+  height: 100vh;
+  /* background-image: url(https://images.unsplash.com/photo-1718573577441-61fb326c1517?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 42%;
+  background-repeat: no-repeat;
+  z-index: 99999;
+  cursor: pointer;
+}
+
+#img-one {
+  background-image: url(./Assets/Images/one.jpg);
+}
+
+#img-two {
+  background-image: url(./Assets/Images/two.jpg);
+}
+
+#img-three {
+  background-image: url(./Assets/Images/three.jpg);
+}
+#img-four {
+  background-image: url(./Assets/Images/four.jpg);
+}
+
+#img-five {
+  background-image: url(./Assets/Images/five.jpg);
+}
+#img-six {
+  background-image: url(./Assets/Images/six.jpg);
+}
+#img-seven {
+  background-image: url(./Assets/Images/seven.jpg);
+}
+#img-eight {
+  background-image: url(./Assets/Images/eight.jpg);
+}
+#img-nine {
+  background-image: url(./Assets/Images/nine.jpg);
+}
+#img-ten {
+  background-image: url(./Assets/Images/ten.jpg);
+}
+
+
+
+/* Add this to the existing CSS code */
+
+/* Media queries for responsiveness */
+
+/* Mobile devices (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+  /* Adjust font sizes and padding */
+  .heading-text {
+    font-size: 8rem;
+  }
+  .cntr-p, .cntr-p2 {
+    font-size: 1rem;
+  }
+  .nav a {
+    font-size: 1rem;
+  }
+  /* Adjust section and image sizes */
+  .section {
+    height: 80vh;
+  }
+  .section-img {
+    width: 50%;
+    height: 80vh;
+    margin-left: 25%;
+  }
+}
+
+/* Tablet devices (max-width: 1024px) */
+@media only screen and (max-width: 1024px) {
+  /* Adjust font sizes and padding */
+  .heading-text {
+    font-size: 10rem;
+  }
+  .cntr-p, .cntr-p2 {
+    font-size: 1.2rem;
+  }
+  .nav a {
+    font-size: 1.2rem;
+  }
+  /* Adjust section and image sizes */
+  .section {
+    height: 90vh;
+  }
+  .section-img {
+    width: 40%;
+    height: 90vh;
+    margin-left: 30%;
+  }
+}
+
+/* Desktop devices (min-width: 1024px) */
+@media only screen and (min-width: 1024px) {
+  /* No changes needed, as the original styles are suitable for desktop devices */
+}
+  </style>
+  <body>
+    <div class="loader d-flex">
+      <div class="text-loader text-1">1</div>
+      <div class="text-loader text-2">2</div>
+      <div class="text-loader text-3">3</div>
+      <div class="text-loader text-4">4</div>
+      <div class="text-loader text-5">5</div>
+      <div class="text-loader text-6">6</div>
+      <div class="text-loader text-7">7</div>
+      <div class="text-loader text-8">8</div>
+      <div class="text-loader text-9">9</div>
+      <div class="text-loader text-10">10</div>
+      <div class="text-loader text-23">23</div>
+      <div class="text-loader text-63">63</div>
+      <div class="text-loader text-97">97</div>
+      <div class="text-loader text-100">100</div>
+    </div>
+    <div class="fixed-p d-flex">
+      <div class="flex-p-content d-flex-c">
+        <div class="cntr-p">Created By</div>
+        <div class="cntr-p2">NIKHIL</div>
+        <div class="nav d-flex">
+          <a class="info" href="#">GO Back</a>
+          <a class="contact" href="#">CONTACT</a>
+        </div>
+      </div>
+    </div>
+    <div id="one" class="section d-flex">
+      <h1 id="one-text" class="heading-text">GIVENCHY</h1>
+    </div>
+    <div id="img-one" class="section-img"></div>
+    <div id="two" class="section d-flex">
+      <h1 class="heading-text">DAY 1</h1>
+    </div>
+    <div id="img-two" class="section-img"></div>
+    <div id="three" class="section d-flex">
+      <h1 class="heading-text">DAY 2</h1>
+    </div>
+    <div id="img-three" class="section-img"></div>
+    <div id="four" class="section d-flex">
+      <h1 class="heading-text">DAY 3</h1>
+    </div>
+    <div id="img-four" class="section-img"></div>
+    <div id="five" class="section d-flex">
+      <h1 class="heading-text">DAY 4</h1>
+    </div>
+    <div id="img-five" class="section-img"></div>
+    <div id="six" class="section d-flex">
+      <h1 class="heading-text">DAY 5</h1>
+    </div>
+    <div id="img-six" class="section-img"></div>
+    <div id="seven" class="section d-flex">
+      <h1 class="heading-text">DAY 6</h1>
+    </div>
+
+
+    <div id="img-eight" class="section-img"></div>
+    <div id="seven" class="section d-flex">
+      <h1 class="heading-text">DAY 7</h1>
+    </div>
+
+    <div id="img-nine" class="section-img"></div>
+    <div id="eight" class="section d-flex">
+      <h1 class="heading-text">DAY 8</h1>
+    </div>
+
+
+    <div id="img-ten" class="section-img"></div>
+    <div id="nine" class="section d-flex">
+      <h1 class="heading-text">DAY 9</h1>
+    </div>
+
+    <div id="img-seven" class="section-img"></div>
+    <div id="last" class="section d-flex">
+      <!-- <h1 class="heading-text">SOPHIE</h1> -->
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="descrambler.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script>
+      // $(".cntr-p").scramble(4000, 20, "alphabet", true);
+// $(".cntr-p2").scramble(4000, 20, "alphabet", true);
+
+var tl = gsap.timeline();
+
+
+tl.to(".text-loader", {
+    opacity: 1,
+    duration: 0.07,
+    stagger: {
+        each: 0.14, //0.07 to show + 0.07 to hide = 0.14
+        repeat: 1,
+        yoyo: true
+    }
+})
+    .to(".loader", {
+        display: "none",
+    })
+    .to(".cntr-p", {
+        onStart: function () {
+            $(".cntr-p").scramble(2000, 50, "alphabet", true);
+
+        }
+    }, 'scr')
+    .to(".cntr-p2", {
+        onStart: function () {
+            $(".cntr-p2").scramble(2000, 50, "alphabet", true);
+
+        }
+    }, 'scr')
+    .to(".info", {
+        onStart: function () {
+            $(".info").scramble(2000, 50, "alphabet", true);
+
+        }
+    }, 'scr')
+    .to(".contact", {
+        onStart: function () {
+            $(".contact").scramble(2000, 50, "alphabet", true);
+
+        }
+    }, 'scr')
+
+
+var tl2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#one",
+        pin: true,
+        // markers: true,
+        start: "50% 50%",
+        end: "150% 50%",
+        scrub: true
+    }
+});
+
+tl2.to(".flex-p-content", {
+    scale: "0.8"
+})
+    .to("#one-text", {
+        top: "50%"
+    })
+
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#img-one",
+        start: "0% 90%",
+        end: "200% 90%",
+        scrub: true,
+        // markers: true,
+    }
+})
+    .to("#img-one", {
+        backgroundSize: "50%",
+    });
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#img-two",
+        start: "0% 90%",
+        end: "200% 90%",
+        scrub: true,
+        // markers: true,
+    }
+})
+    .to("#img-two", {
+        backgroundSize: "50%",
+    });
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#img-three",
+        start: "0% 90%",
+        end: "200% 90%",
+        scrub: true,
+        // markers: true,
+    }
+})
+    .to("#img-three", {
+        backgroundSize: "50%",
+    });
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#img-four",
+        start: "0% 90%",
+        end: "200% 90%",
+        scrub: true,
+        // markers: true,
+    }
+})
+    .to("#img-four", {
+        backgroundSize: "50%",
+    });
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#img-five",
+        start: "0% 90%",
+        end: "200% 90%",
+        scrub: true,
+        // markers: true,
+    }
+})
+    .to("#img-five", {
+        backgroundSize: "50%",
+    });
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#img-six",
+        start: "0% 90%",
+        end: "200% 90%",
+        scrub: true,
+        // markers: true,
+    }
+})
+    .to("#img-six", {
+        backgroundSize: "50%",
+    });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: "#img-eight",
+            start: "0% 90%",
+            end: "200% 90%",
+            scrub: true,
+            // markers: true,
+        }
+    })
+        .to("#img-eight", {
+            backgroundSize: "50%",
+        });
+
+        
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#img-nine",
+                start: "0% 90%",
+                end: "200% 90%",
+                scrub: true,
+                // markers: true,
+            }
+        })
+            .to("#img-nine", {
+                backgroundSize: "50%",
+            });
+        
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#img-seven",
+        start: "0% 90%",
+        end: "200% 90%",
+        scrub: true,
+        // markers: true,
+    }
+})
+    .to("#img-seven", {
+        backgroundSize: "50%",
+    });
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#last",
+        start: "0% 90%",
+        end: "200% 90%",
+        scrub: true,
+        // markers: true,
+    }
+})
+    .to(".flex-p-content", {
+        scale: "1.2",
+    });
+
+
+document.querySelector("#img-one").addEventListener("mouseenter", function () {
+    document.querySelector("html").style.backgroundColor = "#dfd2be";
+})
+
+document.querySelector("#img-one").addEventListener("mouseleave", function () {
+    document.querySelector("html").style.backgroundColor = "#000";
+})
+
+
+document.querySelector("#img-two").addEventListener("mouseenter", function () {
+    document.querySelector("html").style.backgroundColor = "#1a354e";
+})
+
+document.querySelector("#img-two").addEventListener("mouseleave", function () {
+    document.querySelector("html").style.backgroundColor = "#000";
+})
+
+
+document.querySelector("#img-three").addEventListener("mouseenter", function () {
+    document.querySelector("html").style.backgroundColor = "#b11215";
+  })
+  
+  document.querySelector("#img-three").addEventListener("mouseleave", function () {
+    document.querySelector("html").style.backgroundColor = "#000";
+  })
+  
+  
+  document.querySelector("#img-four").addEventListener("mouseenter", function () {
+    document.querySelector("html").style.backgroundColor = "#062529";
+  })
+  
+  document.querySelector("#img-four").addEventListener("mouseleave", function () {
+    document.querySelector("html").style.backgroundColor = "#000";
+  })
+  
+  
+  document.querySelector("#img-five").addEventListener("mouseenter", function () {
+    document.querySelector("html").style.backgroundColor = "#b05d22";
+  })
+  
+  document.querySelector("#img-five").addEventListener("mouseleave", function () {
+    document.querySelector("html").style.backgroundColor = "#000";
+  })
+  
+  
+  document.querySelector("#img-six").addEventListener("mouseenter", function () {
+    document.querySelector("html").style.backgroundColor = "#281069";
+  })
+  
+  document.querySelector("#img-six").addEventListener("mouseleave", function () {
+    document.querySelector("html").style.backgroundColor = "#000";
+  })
+  
+  
+  
+  document.querySelector("#img-seven").addEventListener("mouseenter", function () {
+    document.querySelector("html").style.backgroundColor = "#333";
+  })
+  
+  document.querySelector("#img-seven").addEventListener("mouseleave", function () {
+    document.querySelector("html").style.backgroundColor = "#000";
+  })
+  
+  document.querySelector("#img-eight").addEventListener("mouseenter", function () {
+    document.querySelector("html").style.backgroundColor = "#FF5733";
+  })
+  
+  document.querySelector("#img-eight").addEventListener("mouseleave", function () {
+    document.querySelector("html").style.backgroundColor = "#000";
+  })
+  
+
+
+
+
+
+
+
+
+
+// This is first long process using through only GSAP .to
+
+// tl.to(".text-1", {
+//     opacity: 1,
+//     duration: 0.07,
+//   })
+//     .to(".text-1", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-2", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-2", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-3", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-3", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-4", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-4", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-5", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-5", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-6", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-6", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-7", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-7", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-8", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-8", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-9", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-9", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-10", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-10", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-23", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-23", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-63", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-63", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-97", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".text-97", {
+//       duration: 0.07,
+//       opacity: 0,
+//     })
+//     .to(".text-100", {
+//       duration: 0.07,
+//       opacity: 1,
+//     })
+//     .to(".loader", {
+//       display: "none",
+//     })
+    </script>
+  </body>
+</html>
